@@ -1,12 +1,23 @@
 import * as React from "react"
-//import { Button, Card } from "react-bootstrap"
-import { View, Text, Button } from "react-native"
+import EventCard from "../components/EventCard"
+import Header from "../components/Header";
+import { Container, ContainerContent, Subtitle, Title } from "./styles";
 
-export default function Home() {
+
+const Home = () => {
     return (
-        <View>
-            <Button title="Test" onPress={() => {}} />
-
-        </View>
+        <Container>
+            <ContainerContent>
+                <Title>
+                    Bem vindo.
+                </Title>
+                <Subtitle>
+                    Escolha seus tickets
+                </Subtitle>
+                <EventCard />
+            </ContainerContent>
+        </Container>
     )
 }
+
+export default Home;

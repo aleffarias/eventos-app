@@ -2,7 +2,7 @@ import * as React from "react"
 //import { Button, Card } from "react-bootstrap"
 import { View, Text, Button } from "react-native"
 
-export default function Home() {
+const Profile = () => {
     return (
         <View>
             <Button title="Test" onPress={() => {}} />
@@ -12,3 +12,5 @@ export default function Home() {
         </View>
     )
 }
+
+export default Profile;
