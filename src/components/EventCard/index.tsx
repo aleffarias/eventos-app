@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Btn } from "../common/Button";
+import { Btn } from "../common/Btn";
 import ModalDetails from "./ModalDetails";
 
 import { 

@@ -6,7 +6,7 @@ interface BtnProps {
     accessibilityLabel?: string
     title: string
     color?: string
-    onPress: any
+    onPress: () => void
 }
 
 export const Btn = ( {onPress, accessibilityLabel, title, color}: BtnProps) => {
