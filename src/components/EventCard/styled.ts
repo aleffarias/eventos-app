@@ -11,15 +11,15 @@ export const Container = styled.View`
     background-color: ${Colors.background[200]};
 `;
 
-export const Modal = styled.TouchableOpacity`
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+export const ContainerImage = styled.TouchableOpacity`
+    
 `;
 
 export const Image = styled.Image`
     width: ${RFValue(120)}px;
     height: ${RFValue(120)}px;
-
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 `;
 
 export const ContainerContent = styled.View`
@@ -37,6 +37,7 @@ export const SubtitleContent = styled.Text`
     color: ${Colors.text.default};
     font-size:  ${RFValue(10)}px;
     font-weight: normal;
+    line-height: 16px;
 `;
 
 export const ContainerPrice = styled.View`
@@ -61,3 +62,17 @@ export const ContainerButton = styled.View`
     justify-content: flex-end;
     margin: 8px 12px 0px 0px; 
 `;
+
+export const Modal = styled.Modal`
+    flex: 1;
+`;
+
+export const OutsideModal = styled.TouchableOpacity`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: ${Colors.black};
+    opacity: 0.8;
+`;
+
+
