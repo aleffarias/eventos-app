@@ -1,6 +1,5 @@
 import React from 'react';
-import { ButtonProps, Pressable } from 'react-native';
-import { Button, Container, Title } from './styles'
+import { Button, ButtonBrand, Container, Title } from './styles'
 
 interface BtnProps {
     accessibilityLabel?: string
@@ -12,11 +11,23 @@ interface BtnProps {
 export const Btn = ( {onPress, accessibilityLabel, title, color}: BtnProps) => {
     return (
         <Container>
-            <Button onPress={onPress} accessibilityLabel={accessibilityLabel} >
-                <Title>
+            <Button onPress={onPress} accessibilityLabel={accessibilityLabel} color={color} >
+                <Title color={color} >
                     {title}
                 </Title>
             </Button>
+        </Container>
+    )
+}
+
+export const BtnBrand = ( {onPress, accessibilityLabel, title}: BtnProps) => {
+    return (
+        <Container>
+            <ButtonBrand onPress={onPress} accessibilityLabel={accessibilityLabel} >
+                <Title>
+                    {title}
+                </Title>
+            </ButtonBrand>
         </Container>
     )
 }

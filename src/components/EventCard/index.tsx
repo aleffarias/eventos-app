@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Btn } from "../common/Btn";
+import { BtnBrand } from "../common/Btn";
 import ModalDetails from "./ModalDetails";
 
 import { 
@@ -56,20 +56,20 @@ interface EventCardProps {
                 </ContainerPrice>
 
                 <ContainerButton>
-                    <Btn title="Comprar Ticket" onPress={() => {console.log(data.title)}} />
+                    <BtnBrand title="Comprar Ticket" onPress={() => {console.log(data.title)}} />
                 </ContainerButton>
 
             </ContainerContent>
 
             <Modal
-                    transparent={true}
-                    visible={showModal}
-                    onRequestClose={() => {setShowModal(!showModal)}}
-                >
-                    <OutsideModal activeOpacity={0} onPress={() => {setShowModal(false)}} >
-                        <ModalDetails data={data} />
-                    </OutsideModal>
-                </Modal>
+                transparent={true}
+                visible={showModal}
+                onRequestClose={() => {setShowModal(!showModal)}}
+            >
+                <OutsideModal activeOpacity={0} onPress={() => {setShowModal(false)}} >
+                    <ModalDetails data={data} />
+                </OutsideModal>
+            </Modal>
 
         </Container>
     )

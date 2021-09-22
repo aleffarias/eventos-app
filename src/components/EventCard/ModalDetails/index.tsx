@@ -1,5 +1,5 @@
 import React from 'react'
-import { Btn } from '../../common/Btn';
+import { BtnBrand } from '../../common/Btn';
 
 import { 
     ContainerButton, 
@@ -63,7 +63,7 @@ const ModalDetails = ({data}:EventCardProps) => {
                         </ContainerPrice>
 
                         <ContainerButton>
-                            <Btn title="Comprar Ticket" onPress={() => {console.log(data.title)}} />
+                            <BtnBrand title="Comprar Ticket" onPress={() => {console.log(data.title)}} />
                         </ContainerButton>
                     </ContainerBuy>
 
