@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import Colors from "../styles/Colors";
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
     flex: 1;
     background-color: ${Colors.background[100]};
 `;
