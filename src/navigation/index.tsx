@@ -9,8 +9,7 @@ import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Register from '../screens/Register';
 import Colors from '../styles/Colors';
-import  Header  from '../components/Header';
-import { SafeAreaView } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 // Creating navigation  
 const Stack = createNativeStackNavigator();
@@ -19,16 +18,18 @@ const Tab = createBottomTabNavigator();
 const Navigation: React.FC = () => {
     return (
        <NavigationContainer >
+            <StatusBar style="light" />
+            
             <Tab.Navigator
                 initialRouteName="Home"
                 screenOptions={{
                     headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: Colors.background[300],
-                        height: 75,
+                        height: 90,
                     },
                     headerTitleStyle: {
-                        color: Colors.text.light,
+                        color: Colors.white,
                         fontWeight: 'bold', 
                     },
 
@@ -37,11 +38,10 @@ const Navigation: React.FC = () => {
                         height: 75,
                         borderTopLeftRadius: 8,
                         borderTopRightRadius: 8,
-                        backgroundColor: Colors.background[200]
+                        backgroundColor: Colors.background[200],
                     },
                     tabBarLabelStyle: {
                         fontWeight: 'bold',
-                        
                     },
                     tabBarActiveTintColor: Colors.secondary
                 }}

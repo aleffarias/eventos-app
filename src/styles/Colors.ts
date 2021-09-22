@@ -6,6 +6,7 @@ export default {
         brand1: "#C90E31",
         brand2: "#7F01C8",
         white: "#FFFFFF",
+        black: "#000000",
 
         background: {
             "100": "#1E1E1E",
