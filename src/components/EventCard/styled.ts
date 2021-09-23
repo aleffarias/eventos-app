@@ -5,7 +5,7 @@ import Colors from "../../styles/Colors";
 export const Container = styled.View`
     flex-direction: row;
     width: auto;
-    height:  ${RFValue(120)}px;
+    height:  ${RFValue(130)}px;
     margin: 16px 0px 16px 0px;
     border-radius: 8px;
     background-color: ${Colors.background[200]};
@@ -16,14 +16,15 @@ export const ContainerImage = styled.TouchableOpacity`
 `;
 
 export const Image = styled.Image`
-    width: ${RFValue(120)}px;
-    height: ${RFValue(120)}px;
+    width: ${RFValue(130)}px;
+    height: ${RFValue(130)}px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 `;
 
 export const ContainerContent = styled.View`
     flex: 1;
+    justify-content: space-between;
     margin: 8px 8px 8px 21px;
 `;
 
@@ -38,14 +39,21 @@ export const SubtitleContent = styled.Text`
     font-size:  ${RFValue(10)}px;
     font-weight: normal;
     line-height: 16px;
+    height: 50px;
 `;
 
 export const ContainerPrice = styled.View`
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    margin: 0px 26px 0px 0px;
+    margin: 0px 8px 0px 0px;
 `;
+
+export const ContainerContentPrice = styled.View`
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+`;
+
 
 export const Price = styled.Text`
     color: ${Colors.text.light};

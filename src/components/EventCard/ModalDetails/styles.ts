@@ -6,6 +6,7 @@ export const Container = styled.TouchableWithoutFeedback`
 `;
 
 export const ContainerModal = styled.View`
+    min-width: 85%;
     margin: 32px;
     border-radius: 8px;
     background-color: ${Colors.background[300]};

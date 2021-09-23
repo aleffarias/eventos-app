@@ -21,7 +21,10 @@ import {
 
 interface EventCardProps {
     data: {
-        title: string,
+        name: string,
+        description: string,
+        price: number,
+        type: string
         image: string,
     }
 }
@@ -38,15 +41,10 @@ const ModalDetails = ({data}:EventCardProps) => {
 
                 <ContainerContent>
                     <TitleContentModal>
-                        Lorem Ipsum dolor
+                        {data.name}
                     </TitleContentModal>
                     <SubtitleContent>
-                        Lorem ipsum urna tempor ornare urna quisque blandit nisi, nunc vitae in integer aliquam mattis 
-                        justo porttitor eros, condimentum nec libero pharetra proin commodo per. ut donec vel tortor 
-                        pellentesque nunc leo praesent.
-                        Lorem ipsum urna tempor ornare urna quisque blandit nisi, nunc vitae in integer aliquam mattis 
-                        justo porttitor eros, condimentum nec libero pharetra proin commodo per. ut donec vel tortor 
-                        pellentesque nunc leo praesent. 
+                        {data.description}
                     </SubtitleContent> 
 
                     <ContainerBuy>
@@ -55,7 +53,7 @@ const ModalDetails = ({data}:EventCardProps) => {
                                 R$
                             </Price>
                             <PriceReal>
-                                99
+                                {data.price}
                             </PriceReal>
                             <Price>
                                 ,99
@@ -63,7 +61,7 @@ const ModalDetails = ({data}:EventCardProps) => {
                         </ContainerPrice>
 
                         <ContainerButton>
-                            <BtnBrand title="Comprar Ticket" onPress={() => {console.log(data.title)}} />
+                            <BtnBrand title="Comprar Ticket" onPress={() => {console.log(data.name)}} />
                         </ContainerButton>
                     </ContainerBuy>
 
