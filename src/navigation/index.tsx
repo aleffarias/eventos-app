@@ -34,23 +34,24 @@ const Navigation: React.FC = () => {
                     },
 
                     tabBarStyle: {
-                        width: "100%",
-                        height: 75,
-                        borderTopLeftRadius: 8,
-                        borderTopRightRadius: 8,
                         backgroundColor: Colors.background[200],
+                        height: 75,
+                        
                     },
                     tabBarLabelStyle: {
                         fontWeight: 'bold',
+                        marginBottom: 8,
                     },
-                    tabBarActiveTintColor: Colors.secondary
+                    tabBarActiveTintColor: Colors.secondary,
+                    tabBarHideOnKeyboard: true,
+                    
                 }}
             >
                 <Tab.Screen 
                     name="Home"
                     component={ Home }
                     options={{
-                        title: "Eventos",
+                        tabBarLabel: "Eventos",
                         tabBarIcon: ({ size, color }) => ( 
                             <Feather name="home" size={size} color={color} /> 
                         )
@@ -61,7 +62,7 @@ const Navigation: React.FC = () => {
                     name="Register"
                     component={ Register }
                     options={{
-                        title: "Cadastrar",
+                        tabBarLabel: "Cadastrar",
                         tabBarIcon: ({ size, color }) => ( 
                             <MaterialCommunityIcons name="ticket" size={size} color={color} />
                         )
@@ -73,7 +74,7 @@ const Navigation: React.FC = () => {
                     name="Profile"
                     component={ Profile }
                     options={{
-                        title: "Perfil",
+                        tabBarLabel: "Perfil",
                         tabBarIcon: ({ size, color }) => ( 
                             <FontAwesome name="user-circle" size={size} color={color} /> 
                         )

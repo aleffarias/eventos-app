@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Btn } from "../../components/common/Btn";
 import BtnText from "../../components/common/Btn/BtnText";
 import api from "../../services/Api";
@@ -6,11 +6,13 @@ import { DataProps } from "../Home";
 
 import { Container, ContainerContent, Title } from "../styles";
 import { 
-    ConatinerUser, 
+    ConatinerUser,
+    ContainerInfo, 
     Image, 
     Username, 
+    Email,
     ContainerOptions, 
-    ContainerBtn
+    ContainerBtn,
 } from "./styles";
 
 interface UsersProps {
@@ -28,12 +30,10 @@ const Profile = () => {
          api.get('/users').then(response => {
             const dataUsers:UsersProps[] = response.data
             if (dataUsers) setUsers(dataUsers[0])
-            console.log("2")
         })
       }
 
     useEffect(() => {
-        console.log("1")
         loadingUsers()
     }, [])
 
@@ -44,10 +44,14 @@ const Profile = () => {
 
                 <ConatinerUser>
                     <Image 
-                        source={{uri: users.image}}
-                    />
-                    <Username>{users.username}</Username>
-                    {console.log("3a")}
+                        source={{uri: "https://avatars.githubusercontent.com/u/36940969?v=4"}}
+                        />
+                     <ContainerInfo>
+                        <Username>{"Alef Farias"}</Username>
+                        <Email>{"alef@email.com"}</Email>
+                    </ContainerInfo>
+
+                    
                 </ConatinerUser>
 
                 <ContainerOptions>

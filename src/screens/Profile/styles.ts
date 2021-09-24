@@ -17,12 +17,24 @@ export const Image = styled.Image`
     border-radius: 100px;
 `;
 
+export const ContainerInfo = styled.View`
+
+`;
+
 export const Username = styled.Text`
     color: ${Colors.white};
     font-size: ${RFValue(20)}px;
     font-weight: bold;
 
     margin: 8px 0px 0px 24px;
+`;
+
+export const Email = styled.Text`
+    color: ${Colors.text.light};
+    font-size: ${RFValue(14)}px;
+    font-weight: normal;
+
+    margin: 0px 0px 0px 24px;
 `;
 
 export const ContainerOptions = styled.View`

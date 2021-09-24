@@ -33,10 +33,11 @@ interface EventCardProps {
     const [ showModal, setShowModal ] = useState(false)
 
     const real = Math.floor(data.price * 100 / 100)  
-    const centavoAux = data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    // toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    const centavoAux = data.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     const centavo = centavoAux.slice( centavoAux.length - 2 , centavoAux.length)
-    
+    console.log("Real: " + real)
+    console.log("CentavoAux: " + centavoAux)
+    console.log("Centavo: " + centavo)
 
     
     return (
