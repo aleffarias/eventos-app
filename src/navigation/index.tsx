@@ -3,23 +3,43 @@ import { NavigationContainer  } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Feather, FontAwesome, MaterialCommunityIcons   } from "@expo/vector-icons/";
+import { Feather, FontAwesome, MaterialCommunityIcons, Ionicons } from "@expo/vector-icons/";
 
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Register from '../screens/Register';
 import Colors from '../styles/Colors';
 import { StatusBar } from 'expo-status-bar';
+import CartModal from '../components/CartModal';
 
 // Creating navigation  
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const Navigation: React.FC = () => {
+const Navigation = () => {
     return (
-       <NavigationContainer >
+        <NavigationContainer >
             <StatusBar style="light" />
-            
+            <RootNavigator />
+        </NavigationContainer>
+    );
+  }
+
+const RootNavigator = () => {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    );
+  }
+
+const BottomTabNavigator: React.FC = () => {
+    
+    const cartButton = () => (
+        <CartModal />
+    )
+    
+    return (
             <Tab.Navigator
                 initialRouteName="Home"
                 screenOptions={{
@@ -54,7 +74,8 @@ const Navigation: React.FC = () => {
                         tabBarLabel: "Eventos",
                         tabBarIcon: ({ size, color }) => ( 
                             <Feather name="home" size={size} color={color} /> 
-                        )
+                        ),
+                         headerRight: cartButton
                     }}
                 />
 
@@ -82,7 +103,7 @@ const Navigation: React.FC = () => {
                 />        
 
             </Tab.Navigator>
-       </NavigationContainer >
+    
     )
 }
 

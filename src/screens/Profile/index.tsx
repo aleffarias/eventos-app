@@ -44,7 +44,7 @@ const Profile = () => {
 
                 <ConatinerUser>
                     <Image 
-                        source={{uri: "https://avatars.githubusercontent.com/u/36940969?v=4"}}
+                        source={{uri: users.image}}
                         />
                      <ContainerInfo>
                         <Username>{users.username}</Username>
@@ -55,8 +55,8 @@ const Profile = () => {
                 </ConatinerUser>
 
                 <ContainerOptions>
-                    <BtnText titleOptions="Meus Eventos" onPress={() => {}}/>
-                    <BtnText titleOptions="Meus Ingressos" onPress={() => {}}/>
+                    <BtnText titleOptions="Meus Eventos" onPress={() => {}} />
+                    <BtnText titleOptions="Meus Ingressos" onPress={() => {}} />
                 </ContainerOptions>
                 
                 <ContainerBtn>

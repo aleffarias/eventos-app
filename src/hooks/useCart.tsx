@@ -29,10 +29,10 @@ type Ticket = {
     function add (item: Ticket){
       const newCart = [...cart];
   
-      const itemAlreadyExists = newCart.find((ticket) => ticket === item);
+      const itemAlreadyExists = newCart.find((ticket) => ticket.name === item.name);
       
-      if(!itemAlreadyExists) newCart.push(item);
-  
+      if(!itemAlreadyExists) {newCart.push(item);}
+      
       setCart(newCart);
     }
   

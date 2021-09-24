@@ -1,6 +1,6 @@
 import React from 'react'
 import { BtnBrand } from '../../common/Btn';
-
+import { useCart } from "../../../hooks/useCart";
 import { 
     ContainerButton, 
     ContainerPrice, 
@@ -26,10 +26,14 @@ interface EventCardProps {
         price: number,
         type: string
         image: string,
+        real: number,
+        centavo: string
     }
 }
 
 const ModalDetails = ({data}:EventCardProps) => {
+    const { add } = useCart()
+
     return (
         <Container>
             <ContainerModal>
@@ -53,15 +57,15 @@ const ModalDetails = ({data}:EventCardProps) => {
                                 R$
                             </Price>
                             <PriceReal>
-                                {data.price}
+                                {data.real}
                             </PriceReal>
                             <Price>
-                                ,99
+                                ,{data.centavo}
                             </Price>
                         </ContainerPrice>
 
                         <ContainerButton>
-                            <BtnBrand title="Comprar Ticket" onPress={() => {console.log(data.name)}} />
+                            <BtnBrand title="Comprar Ticket" onPress={() => {add(data)}} />
                         </ContainerButton>
                     </ContainerBuy>
 
