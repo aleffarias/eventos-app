@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { View } from "react-native";
+import { useCart } from "../../hooks/useCart";
+import { formatNumber } from "../../utils/Format";
 import { BtnBrand } from "../common/Btn";
 import ModalDetails from "./ModalDetails";
 
@@ -31,15 +33,12 @@ interface EventCardProps {
 
  const EventCard = ({ data }: EventCardProps) => {
     const [ showModal, setShowModal ] = useState(false)
+    const { add } = useCart()
 
     const real = Math.floor(data.price * 100 / 100)  
-    const centavoAux = data.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    const centavoAux = formatNumber(data.price)
     const centavo = centavoAux.slice( centavoAux.length - 2 , centavoAux.length)
-    console.log("Real: " + real)
-    console.log("CentavoAux: " + centavoAux)
-    console.log("Centavo: " + centavo)
 
-    
     return (
         <Container>
             <ContainerImage onPress={() => {setShowModal(!showModal)}}>
@@ -72,7 +71,7 @@ interface EventCardProps {
                         </Price>
                     </ContainerContentPrice>
                     
-                    <BtnBrand title="Comprar Ticket" onPress={() => {console.log(data.name)}} />
+                    <BtnBrand title="Comprar Ticket" onPress={() => {add(data)}} />
                 </ContainerPrice>
 
             </ContainerContent>

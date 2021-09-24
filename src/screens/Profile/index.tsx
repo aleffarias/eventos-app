@@ -24,10 +24,10 @@ interface UsersProps {
   }
 
 const Profile = () => {
-    const [users, setUsers] = useState<UsersProps>();
+    const [users, setUsers] = useState<UsersProps>({} as UsersProps);
 
-     function loadingUsers() {
-         api.get('/users').then(response => {
+     async function loadingUsers() {
+         await api.get('/users').then(response => {
             const dataUsers:UsersProps[] = response.data
             if (dataUsers) setUsers(dataUsers[0])
         })
@@ -47,8 +47,8 @@ const Profile = () => {
                         source={{uri: "https://avatars.githubusercontent.com/u/36940969?v=4"}}
                         />
                      <ContainerInfo>
-                        <Username>{"Alef Farias"}</Username>
-                        <Email>{"alef@email.com"}</Email>
+                        <Username>{users.username}</Username>
+                        <Email>{users.email}</Email>
                     </ContainerInfo>
 
                     

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { FlatList } from "react-native-gesture-handler";
 import EventCard from "../components/EventCard"
-import { Container, ContainerContent, Subtitle, Title } from "./styles";
 import api from "../services/Api"
+import { useCart } from "../hooks/useCart";
 
+import { Container, ContainerContent, Subtitle, Title } from "./styles";
 export interface DataProps {
   id: number
   name: string
@@ -15,6 +16,7 @@ export interface DataProps {
 
 const Home = () => {
   const [data, setData ] = useState<DataProps[]>();
+  const { cart, total } = useCart();
 
   async function loadingEvents() {
     await api.get('/events').then(response => {
