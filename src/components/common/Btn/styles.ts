@@ -58,3 +58,15 @@ export const ButtonCamera = styled.TouchableOpacity`
 export const IconButton = styled(MaterialCommunityIcons )`
     color: ${Colors.white};
 `;
+
+export const BtnOptions = styled.TouchableOpacity`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const Options = styled.Text`
+    color: ${Colors.white};
+    font-size: ${RFValue(16)}px;
+    font-weight: normal;
+`;

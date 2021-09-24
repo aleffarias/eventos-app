@@ -1,0 +1,55 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "name": "Palestra: Educação atual no Brasil",
+      "description": "O Brasil ocupa o 53º lugar em educação, entre 65 países avaliados (PISA). Mesmo com o programa social que incentivou a matrícula de 98% de crianças entre 6 e 12 anos, 731 mil crianças ainda estão fora da escola (IBGE).",
+      "price": 39.9,
+      "type": "palestra",
+      "image": "https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Show ao vivo",
+      "description": "Casa de show Fest no centro. As 21h",
+      "price": 60,
+      "type": "show",
+      "image": "https://www.uva.br/sites/default/files/artigo-evento_0.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Congresso de medicina",
+      "description": "Congresso Brasileiro de Clínica Médica. Data 08 a 11 de outubro de 2021. Totalmente Online",
+      "price": 20,
+      "type": "congresso",
+      "image": "https://hotelmt.com.br/wp-content/uploads/2018/11/258705-confira-5-dicas-para-organizar-um-evento-beneficente.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Palestra: Educação atual no Brasil",
+      "description": "O Brasil ocupa o 53º lugar em educação, entre 65 países avaliados (PISA). Mesmo com o programa social que incentivou a matrícula de 98% de crianças entre 6 e 12 anos, 731 mil crianças ainda estão fora da escola (IBGE).",
+      "price": 39.9,
+      "type": "palestra",
+      "image": "https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg"
+    }
+
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Alef Farias",
+      "email": "alef@email.com",
+      "image": "https://avatars.githubusercontent.com/u/36940969?v=4",
+      "myEvents": [
+        {
+          "id": 4,
+          "name": "Palestra: Educação atual no Brasil",
+          "description": "O Brasil ocupa o 53º lugar em educação, entre 65 países avaliados (PISA). Mesmo com o programa social que incentivou a matrícula de 98% de crianças entre 6 e 12 anos, 731 mil crianças ainda estão fora da escola (IBGE).",
+          "price": 39.9,
+          "type": "palestra",
+          "image": "https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg"
+        }
+      ]
+    }
+  ]
+}
