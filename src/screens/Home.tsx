@@ -39,8 +39,8 @@ const Home = () => {
               <FlatList 
                   data={data}
                   renderItem={({item}) => <EventCard data={item} />}
-                  keyExtractor={(item, index) => item.id.toString()}
-                  showsHorizontalScrollIndicator={false}
+                  keyExtractor={(item) => item.id.toString()}
+                  showsVerticalScrollIndicator={false}
               />     
           </ContainerContent>
       </Container>
