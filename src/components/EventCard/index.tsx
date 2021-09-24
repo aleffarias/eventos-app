@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { View } from "react-native";
 import { useCart } from "../../hooks/useCart";
 import { formatNumber } from "../../utils/Format";
 import { BtnBrand } from "../common/Btn";
@@ -7,7 +6,6 @@ import ModalDetails from "./ModalDetails";
 
 import { 
     Container, 
-    ContainerButton, 
     ContainerContent, 
     ContainerPrice,
     ContainerContentPrice, 
@@ -28,6 +26,8 @@ interface EventCardProps {
         price: number,
         type: string
         image: string,
+        real: number,
+        centavo: string
     }
 }
 
@@ -38,6 +38,9 @@ interface EventCardProps {
     const real = Math.floor(data.price * 100 / 100)  
     const centavoAux = formatNumber(data.price)
     const centavo = centavoAux.slice( centavoAux.length - 2 , centavoAux.length)
+    data.real = real,
+    data.centavo = centavo
+
 
     return (
         <Container>

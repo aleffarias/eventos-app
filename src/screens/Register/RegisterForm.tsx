@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Platform, View } from "react-native";
+import { Alert, Platform, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Formik } from "formik";
 import api from "../../services/Api";
@@ -66,6 +66,7 @@ const RegisterForm = () => {
                 onSubmit={(values, actions) => {
                     console.log(values)
                     submitEvents(values)
+                    Alert.alert("Evento cadastrado!")
                     actions.resetForm({ 
                         values: {
                             id: uuid.v4(),

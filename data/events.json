@@ -26,13 +26,20 @@
     },
     {
       "id": 4,
-      "name": "Palestra: Educação atual no Brasil",
+      "name": "Palestra: Educação atual no Brasil - Online",
       "description": "O Brasil ocupa o 53º lugar em educação, entre 65 países avaliados (PISA). Mesmo com o programa social que incentivou a matrícula de 98% de crianças entre 6 e 12 anos, 731 mil crianças ainda estão fora da escola (IBGE).",
-      "price": 39.9,
+      "price": 20,
       "type": "palestra",
       "image": "https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg"
+    },
+    {
+      "id": "8857042f-6769-40f1-a85c-b76158163bef",
+      "name": "Evento MB Labs",
+      "description": "Evento as 17h",
+      "price": "10",
+      "type": "conferencia",
+      "image": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/UNVERIFIED-192.168.0.11-eventos-app/ImagePicker/9656f0c5-7e6a-4c11-b4f0-f377541c6255.jpg"
     }
-
   ],
   "users": [
     {
