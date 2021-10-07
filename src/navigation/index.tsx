@@ -2,19 +2,23 @@ import * as React from 'react';
 import { NavigationContainer  } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import { Feather, FontAwesome, MaterialCommunityIcons, Ionicons } from "@expo/vector-icons/";
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Register from '../screens/Register';
+import Cart from '../screens/Cart';
+
 import Colors from '../styles/Colors';
-import { StatusBar } from 'expo-status-bar';
-import CartModal from '../components/CartModal';
+import { BtnIcon } from '../components/common/Btn/BtnIcon';
+import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../../types';
+
 
 // Creating navigation  
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
+const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const Navigation = () => {
     return (
@@ -29,14 +33,15 @@ const RootNavigator = () => {
     return (
       <Stack.Navigator>
         <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
     );
   }
 
 const BottomTabNavigator: React.FC = () => {
     
-    const cartButton = () => (
-        <CartModal />
+    const cartButton = ( navigation ) => (
+        <BtnIcon accessibilityLabel="Carrinho" onPress={() => navigation.navigate("Cart")} size={24} />
     )
     
     return (
@@ -70,13 +75,13 @@ const BottomTabNavigator: React.FC = () => {
                 <Tab.Screen 
                     name="Home"
                     component={ Home }
-                    options={{
+                    options={({navigation}: RootTabScreenProps<'Home'> ) => ({
                         tabBarLabel: "Eventos",
                         tabBarIcon: ({ size, color }) => ( 
                             <Feather name="home" size={size} color={color} /> 
                         ),
-                         headerRight: cartButton
-                    }}
+                         headerRight: () => cartButton(navigation)
+                    })}
                 />
 
                 <Tab.Screen 

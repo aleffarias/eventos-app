@@ -1,14 +1,17 @@
 import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 import Colors from "../../../styles/Colors";
-import { MaterialCommunityIcons  } from "@expo/vector-icons/";
+import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons/";
 
 interface ButtonProps {
     color?: string
 }
 
-export const Container = styled.View`
-    justify-content: flex-end;
+export const Container = styled.View<ButtonProps>`
+`;
+
+export const ContainerButtonIcon = styled.View<ButtonProps>`
+    margin: 0px 28px 0px 0px;
 `;
 
 export const Button = styled.TouchableOpacity<ButtonProps>`
@@ -55,7 +58,11 @@ export const ButtonCamera = styled.TouchableOpacity`
     align-items: center;
 `;
 
-export const IconButton = styled(MaterialCommunityIcons )`
+export const MeterialIcon = styled(MaterialCommunityIcons)`
+    color: ${Colors.white};
+`;
+
+export const IoniconsIcon = styled(Ionicons)`
     color: ${Colors.white};
 `;
 
@@ -69,4 +76,9 @@ export const Options = styled.Text`
     color: ${Colors.white};
     font-size: ${RFValue(16)}px;
     font-weight: normal;
+`;
+
+export const ButtonIcon = styled.TouchableOpacity`
+    align-items: center;
+    justify-content: space-between;
 `;
