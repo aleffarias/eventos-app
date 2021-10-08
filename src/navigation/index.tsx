@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { NavigationContainer  } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather, FontAwesome, MaterialCommunityIcons, Ionicons } from "@expo/vector-icons/";
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
@@ -17,7 +16,7 @@ import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../../
 
 
 // Creating navigation  
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const Navigation = () => {
@@ -31,9 +30,23 @@ const Navigation = () => {
 
 const RootNavigator = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+            animationEnabled: false,
+            headerTitleAlign: 'center',
+            headerTintColor: Colors.white,
+            headerStyle: {
+                backgroundColor: Colors.background[300],
+                height: 90,
+            },
+            headerTitleStyle: {
+                color: Colors.white,
+                fontWeight: 'bold',
+            },     
+        }}
+      >
         <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-        <Stack.Screen name="Cart" component={Cart} />
+        <Stack.Screen name="Cart" component={Cart} options={{ title:"Carrinho" }} />
       </Stack.Navigator>
     );
   }
@@ -57,7 +70,6 @@ const BottomTabNavigator: React.FC = () => {
                         color: Colors.white,
                         fontWeight: 'bold', 
                     },
-
                     tabBarStyle: {
                         backgroundColor: Colors.background[200],
                         height: 75,
@@ -76,7 +88,8 @@ const BottomTabNavigator: React.FC = () => {
                     name="Home"
                     component={ Home }
                     options={({navigation}: RootTabScreenProps<'Home'> ) => ({
-                        tabBarLabel: "Eventos",
+                        title: "Eventos",
+                        tabBarLabel: "Home",
                         tabBarIcon: ({ size, color }) => ( 
                             <Feather name="home" size={size} color={color} /> 
                         ),
@@ -88,6 +101,7 @@ const BottomTabNavigator: React.FC = () => {
                     name="Register"
                     component={ Register }
                     options={{
+                        title: "Cadastrar",
                         tabBarLabel: "Cadastrar",
                         tabBarIcon: ({ size, color }) => ( 
                             <MaterialCommunityIcons name="ticket" size={size} color={color} />
@@ -100,6 +114,7 @@ const BottomTabNavigator: React.FC = () => {
                     name="Profile"
                     component={ Profile }
                     options={{
+                        title: "Perfil",
                         tabBarLabel: "Perfil",
                         tabBarIcon: ({ size, color }) => ( 
                             <FontAwesome name="user-circle" size={size} color={color} /> 
