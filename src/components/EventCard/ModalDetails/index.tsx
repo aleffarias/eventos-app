@@ -28,10 +28,11 @@ interface EventCardProps {
         image: string,
         real: number,
         centavo: string
-    }
+    },
+    isButton: boolean
 }
 
-const ModalDetails = ({data}:EventCardProps) => {
+const ModalDetails = ({data, isButton}:EventCardProps) => {
     const { add } = useCart()
 
     return (
@@ -52,7 +53,7 @@ const ModalDetails = ({data}:EventCardProps) => {
                     </SubtitleContent> 
 
                     <ContainerBuy>
-                        <ContainerPrice>
+                        <ContainerPrice isButton={isButton}>
                             <Price>
                                 R$
                             </Price>

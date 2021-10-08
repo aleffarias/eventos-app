@@ -40,7 +40,7 @@ const Home = () => {
 
               <FlatList 
                   data={data}
-                  renderItem={({item}) => <EventCard data={item} />}
+                  renderItem={({item}) => <EventCard data={item} isButton={true} />}
                   keyExtractor={(item) => item.id.toString()}
                   showsVerticalScrollIndicator={false}
               />     
