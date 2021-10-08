@@ -29,9 +29,10 @@ interface EventCardProps {
         real: number,
         centavo: string
     }
+    isButton?: boolean
 }
 
- const EventCard = ({ data }: EventCardProps) => {
+ const EventCard = ({ data, isButton }: EventCardProps) => {
     const [ showModal, setShowModal ] = useState(false)
     const { add } = useCart()
 
@@ -47,6 +48,7 @@ interface EventCardProps {
             <ContainerImage onPress={() => {setShowModal(!showModal)}}>
                 <Image 
                     source={{uri: data.image}}
+                    isButton={isButton}
                 />
             </ContainerImage>
 
@@ -54,14 +56,17 @@ interface EventCardProps {
                 <TitleContent>
                     {data.name}
                 </TitleContent>
-                <SubtitleContent 
-                    numberOfLines={2}
-                    ellipsizeMode='tail'
-                >
-                    {data.description}
-                </SubtitleContent>
+
+                { isButton === true &&
+                    <SubtitleContent 
+                        numberOfLines={2}
+                        ellipsizeMode='tail'
+                    >
+                        {data.description}
+                    </SubtitleContent>
+                }
                 
-                <ContainerPrice>
+                <ContainerPrice isButton={isButton} >
                     <ContainerContentPrice>
                         <Price>
                             R$
@@ -73,8 +78,12 @@ interface EventCardProps {
                             ,{centavo}
                         </Price>
                     </ContainerContentPrice>
+
+                    { isButton === true &&
                     
-                    <BtnBrand title="Comprar Ticket" onPress={() => {add(data)}} />
+                        <BtnBrand title="Comprar Ticket" onPress={() => {add(data)}} />
+                    }
+
                 </ContainerPrice>
 
             </ContainerContent>
@@ -85,7 +94,7 @@ interface EventCardProps {
                 onRequestClose={() => {setShowModal(!showModal)}}
             >
                 <OutsideModal activeOpacity={0} onPress={() => {setShowModal(false)}} >
-                    <ModalDetails data={data} />
+                    <ModalDetails data={data} isButton={true} />
                 </OutsideModal>
             </Modal>
 

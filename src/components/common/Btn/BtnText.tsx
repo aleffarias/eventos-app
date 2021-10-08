@@ -2,7 +2,7 @@ import React from "react"
 import {  
     BtnOptions,
     Options, 
-    IconButton
+    MeterialIcon
 } from "./styles";
 
 interface BtnTextProps {
@@ -14,7 +14,7 @@ const BtnText = ({titleOptions, onPress}: BtnTextProps) => {
     return (
         <BtnOptions onPress={onPress}>
             <Options>{titleOptions}</Options>
-            <IconButton name="chevron-right" size={16} />
+            <MeterialIcon name="chevron-right" size={16} />
         </BtnOptions>
 )
 }
