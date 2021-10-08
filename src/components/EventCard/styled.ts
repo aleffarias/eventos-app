@@ -2,10 +2,14 @@ import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 import Colors from "../../styles/Colors";
 
+export interface IsButtonProps {
+    isButton?: boolean
+}
+
 export const Container = styled.View`
     flex-direction: row;
     width: auto;
-    height:  ${RFValue(130)}px;
+    max-height:  ${RFValue(130)}px;
     margin: 16px 0px 16px 0px;
     border-radius: 8px;
     background-color: ${Colors.background[200]};
@@ -15,9 +19,9 @@ export const ContainerImage = styled.TouchableOpacity`
     
 `;
 
-export const Image = styled.Image`
-    width: ${RFValue(130)}px;
-    height: ${RFValue(130)}px;
+export const Image = styled.Image<IsButtonProps>`
+    width: ${ props => props.isButton === true? RFValue(130): RFValue(80)}px;
+    height: ${ props => props.isButton === true? RFValue(130): RFValue(80)}px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 `;
@@ -42,9 +46,9 @@ export const SubtitleContent = styled.Text`
     height: 50px;
 `;
 
-export const ContainerPrice = styled.View`
-    flex-direction: row;
-    align-items: center;
+export const ContainerPrice = styled.View<IsButtonProps>`
+    flex-direction: ${ props => props.isButton === true? "row" : "column"};
+    align-items: ${ props => props.isButton === true? "center" : "flex-end"};
     margin: 0px 8px 0px 0px;
 `;
 
@@ -56,7 +60,7 @@ export const ContainerContentPrice = styled.View`
 
 
 export const Price = styled.Text`
-    color: ${Colors.text.light};
+    color: ${Colors.white};
     font-size:  ${RFValue(10)}px;
     font-weight: bold;
 `;
